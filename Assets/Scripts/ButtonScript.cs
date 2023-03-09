@@ -26,6 +26,7 @@ public class ButtonScript : MonoBehaviour
         Debug.Log("ENTRA");
         foreach (CanvasGroup c in Menus)
         {
+            Debug.Log("Entra en bucle");
             CloseSingle(c);
         }
         
