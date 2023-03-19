@@ -19,23 +19,12 @@ public class SettingsMenu : MonoBehaviour
 
     public Toggle toggle;
 
+    public Scrollbar scrollbar;
+
     // Start is called before the first frame update
     public void Start()
     {
         //**************Resolution Dropdown startup configuration***************
-        resolutions = Screen.resolutions;
-
-        resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        for(int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + "x" + resolutions[i].height;
-            options.Add(option);
-        }
-
-        resolutionDropdown.AddOptions(options);
         CheckResolution();
 
         //***************Volume Slider startup configuration*******************
@@ -57,6 +46,9 @@ public class SettingsMenu : MonoBehaviour
         {
             toggle.isOn = false;
         }
+
+        //***************Scrollbar startup configuration*******************
+        scrollbar.value = 1;
     }
 
     public void ChangeSliderVolume()
