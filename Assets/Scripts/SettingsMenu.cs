@@ -13,7 +13,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider sliderVolume;
     public Image imageMute;
 
-    public Slider sliderBrigthness;
+    public Slider sliderBrightness;
     private float sliderValueBrightness;
     public Image brightnessPanel;
 
@@ -33,9 +33,9 @@ public class SettingsMenu : MonoBehaviour
         CheckMute();
 
         //***************Brightness Slider startup configuration*******************
-        sliderBrigthness.value = PlayerPrefs.GetFloat("brightness", 0.35f);
+        sliderBrightness.value = PlayerPrefs.GetFloat("brightness", 0.35f);
 
-        brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrigthness.value);
+        brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrightness.value);
 
         //***************Full Screen Toggle startup configuration*******************
         if (Screen.fullScreen)
@@ -61,9 +61,9 @@ public class SettingsMenu : MonoBehaviour
 
     public void ChangeSliderBrightness()
     {
-        sliderValueBrightness = sliderBrigthness.value;
+        sliderValueBrightness = sliderBrightness.value;
         PlayerPrefs.SetFloat("brightness", sliderValueBrightness);
-        brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrigthness.value);
+        brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrightness.value);
     }
 
     public void CheckMute()

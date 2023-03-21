@@ -2230,7 +2230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.0077896, y: -475.40033}
+  m_AnchoredPosition: {x: -0.0077896, y: -475.3435}
   m_SizeDelta: {x: 1548.8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &797040326
@@ -3301,6 +3301,7 @@ GameObject:
   - component: {fileID: 930728285}
   - component: {fileID: 930728287}
   - component: {fileID: 930728286}
+  - component: {fileID: 930728288}
   m_Layer: 0
   m_Name: SharedObjectsBetweenScenes
   m_TagString: Options
@@ -3350,6 +3351,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e627a7293d42fe247b3f0da8a14803e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &930728288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930728284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8913c9d8704794f9552cedd1b9ef4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsPanel: {fileID: 930728286}
 --- !u!1 &942253546
 GameObject:
   m_ObjectHideFlags: 0
@@ -5459,8 +5473,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1125526501}
   m_HandleRect: {fileID: 1125526500}
   m_Direction: 2
-  m_Value: 0.5
-  m_Size: 0.75234705
+  m_Value: 0.5000002
+  m_Size: 0.7522573
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5535,7 +5549,7 @@ MonoBehaviour:
   resolutionDropdown: {fileID: 1190750543}
   sliderVolume: {fileID: 851574243}
   imageMute: {fileID: 1435785335}
-  sliderBrigthness: {fileID: 1862849943}
+  sliderBrightness: {fileID: 0}
   brightnessPanel: {fileID: 1211675406}
   toggle: {fileID: 682821193}
   scrollbar: {fileID: 1595177259}
