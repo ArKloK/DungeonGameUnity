@@ -21,7 +21,7 @@ public class Enemigo : MonoBehaviour
         agente.updateUpAxis = false;
     }
 
-    private void Update()
+    /*private void Update()
     {
         this.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         if(this.transform.position == ruta[indiceRuta].position)
@@ -36,5 +36,5 @@ public class Enemigo : MonoBehaviour
             }
         }
         agente.SetDestination(ruta[indiceRuta].position);
-    }
+    }*/
 }

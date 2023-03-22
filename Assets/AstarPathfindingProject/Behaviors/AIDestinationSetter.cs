@@ -18,6 +18,12 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
+		void Start()
+        {
+			//ai.updateRotation = false;
+			//ai.updateUpAxis = false;
+		}
+
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
