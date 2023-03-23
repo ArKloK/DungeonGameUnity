@@ -12,7 +12,7 @@ public class ButtonScript : MonoBehaviour
     public void PlayGame()
     {
         Debug.Log("HOAL");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Game");
     }
 
     public void ExitGame()
