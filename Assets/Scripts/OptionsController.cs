@@ -5,15 +5,4 @@ using UnityEngine;
 public class OptionsController : MonoBehaviour
 {
     public GameObject SettingsScreen;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

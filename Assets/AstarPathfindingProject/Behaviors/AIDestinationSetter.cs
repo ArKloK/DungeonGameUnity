@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 namespace Pathfinding {
 	/// <summary>
@@ -39,7 +40,14 @@ namespace Pathfinding {
 
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
-			if (target != null && ai != null) ai.destination = target.position;
+
+			if (Math.Abs(ai.position.x - target.position.x) <= 9 && Math.Abs(ai.position.y - target.position.y) <= 9)
+			{
+				//Debug.Log(target.position.x - ai.position.x);
+				//Debug.Log(target.position.y - ai.position.y);
+                if (target != null && ai != null) ai.destination = target.position;
+			}
+			
 		}
 	}
 }
