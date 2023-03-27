@@ -8,17 +8,15 @@ public class Enemigo : MonoBehaviour
     public Transform personaje;
     public Transform [] ruta;
     private int indiceRuta;
-    private UnityEngine.AI.NavMeshAgent agente;
 
     private void Awake()
     {
-        agente = GetComponent<UnityEngine.AI.NavMeshAgent>();
+       
     }
 
     private void Start()
     {
-        agente.updateRotation = false;
-        agente.updateUpAxis = false;
+        
     }
 
     /*private void Update()
