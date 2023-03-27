@@ -51,7 +51,7 @@ namespace Pathfinding
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
-            if (Math.Abs(ai.position.x - target.position.x) <= 9 && Math.Abs(ai.position.y - target.position.y) <= 9)
+            if (Math.Abs(ai.position.x - target.position.x) <= 9 && Math.Abs(ai.position.y - target.position.y) <= 1)
             {
                 if (target != null && ai != null) ai.destination = target.position;
             }
