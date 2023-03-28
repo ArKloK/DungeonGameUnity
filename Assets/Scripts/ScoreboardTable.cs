@@ -14,42 +14,47 @@ public class ScoreboardTable : MonoBehaviour
 
     private void Awake()
     {
-       
-            content = transform.Find("ScoreboardContent");
-            row = content.Find("Row");
 
-            row.gameObject.SetActive(false);
+        content = transform.Find("ScoreboardContent");
+        row = content.Find("Row");
+
+        row.gameObject.SetActive(false);
         //Basic operations in player prefs
         //AddRow("Carlos", 38888800);
         //ResetScoretable();
         //DeleteRow(4);
 
-
+        Rows rows;
         //Getting data from player prefs
-        Debug.Log(PlayerPrefs.GetString("scoretable"));
-        string jsonString = PlayerPrefs.GetString("scoretable");
-        Rows rows = JsonUtility.FromJson<Rows>(jsonString);
-
-
-        //Sort the list
-        for (int i = 0; i < rows.RowList.Count; i++)
+        if (!PlayerPrefs.HasKey("scoretable"))
         {
-            for (int j = i + 1; j < rows.RowList.Count; j++)
+            rows = new Rows();
+        }
+        else
+        {
+            string jsonString = PlayerPrefs.GetString("scoretable");
+            rows = JsonUtility.FromJson<Rows>(jsonString);
+
+            //Sort the list
+            for (int i = 0; i < rows.RowList.Count; i++)
             {
-                if (rows.RowList[j].score > rows.RowList[i].score)
+                for (int j = i + 1; j < rows.RowList.Count; j++)
                 {
-                    Row tmp = rows.RowList[i];
-                    rows.RowList[i] = rows.RowList[j];
-                    rows.RowList[j] = tmp;
+                    if (rows.RowList[j].score > rows.RowList[i].score)
+                    {
+                        Row tmp = rows.RowList[i];
+                        rows.RowList[i] = rows.RowList[j];
+                        rows.RowList[j] = tmp;
+                    }
                 }
             }
-        }
 
-        //Locate the list in the RectTransform
-        rowTransformList = new List<Transform>();
-        for (int i = 0; i < 3; i++)
-        {
-            CreateRowTransform(rows.RowList[i], content, rowTransformList);
+            //Locate the list in the RectTransform
+            rowTransformList = new List<Transform>();
+            for (int i = 0; i < 3; i++)
+            {
+                CreateRowTransform(rows.RowList[i], content, rowTransformList);
+            }
         }
     }
 
@@ -104,8 +109,17 @@ public class ScoreboardTable : MonoBehaviour
     {
         Row row = new Row { score = score, name = name };
 
-        string jsonString = PlayerPrefs.GetString("scoretable");
-        Rows rows = JsonUtility.FromJson<Rows>(jsonString);
+        Rows rows;
+        if (!PlayerPrefs.HasKey("scoretable"))
+        {
+            rows = new Rows();
+            rows.RowList = new List<Row>();
+        }
+        else
+        {
+            string jsonString = PlayerPrefs.GetString("scoretable");
+            rows = JsonUtility.FromJson<Rows>(jsonString);
+        }
 
         rows.RowList.Add(row);
 

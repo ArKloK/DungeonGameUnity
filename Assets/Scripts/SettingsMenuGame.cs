@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class SettingsMenu : MonoBehaviour
+public class SettingsMenuGame : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
@@ -18,8 +18,6 @@ public class SettingsMenu : MonoBehaviour
     public Image brightnessPanel;
 
     public Toggle toggle;
-
-    public Scrollbar scrollbar;
 
     // Start is called before the first frame update
     public void Start()
@@ -46,9 +44,6 @@ public class SettingsMenu : MonoBehaviour
         {
             toggle.isOn = false;
         }
-
-        //***************Scrollbar startup configuration*******************
-        scrollbar.value = 1;
     }
 
     public void ChangeSliderVolume()
@@ -56,16 +51,15 @@ public class SettingsMenu : MonoBehaviour
         Debug.Log("CAMBIANDO VOLUMEN");
         sliderValueVolume = sliderVolume.value;
         PlayerPrefs.SetFloat("audioVolume", sliderValueVolume);
-        PlayerPrefs.Save();
         AudioListener.volume = sliderVolume.value;
         CheckMute();
     }
 
     public void ChangeSliderBrightness()
     {
+        Debug.Log("CAMBIANDO BRILLO");
         sliderValueBrightness = sliderBrightness.value;
         PlayerPrefs.SetFloat("brightness", sliderValueBrightness);
-        PlayerPrefs.Save();
         brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrightness.value);
     }
 
