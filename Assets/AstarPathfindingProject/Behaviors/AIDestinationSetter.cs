@@ -32,10 +32,6 @@ namespace Pathfinding
         {
             ani = GetComponentInChildren<Animator>();
             sprite = GetComponentInChildren<SpriteRenderer>();
-        }
-
-        private void Awake()
-        {
             velocity = PlayerPrefs.GetFloat("velocity", 1);
         }
 
