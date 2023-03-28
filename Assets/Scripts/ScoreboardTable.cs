@@ -14,11 +14,11 @@ public class ScoreboardTable : MonoBehaviour
 
     private void Awake()
     {
-        content = transform.Find("ScoreboardContent");
-        row = content.Find("Row");
+       
+            content = transform.Find("ScoreboardContent");
+            row = content.Find("Row");
 
-        row.gameObject.SetActive(false);
-
+            row.gameObject.SetActive(false);
         //Basic operations in player prefs
         //AddRow("Carlos", 38888800);
         //ResetScoretable();
@@ -85,7 +85,7 @@ public class ScoreboardTable : MonoBehaviour
         }
 
         entryTransform.Find("RankTxt").GetComponent<TextMeshProUGUI>().text = rank_str;
-        
+
         string name = newRow.name;
         entryTransform.Find("NameTxt").GetComponent<TextMeshProUGUI>().text = name;
 

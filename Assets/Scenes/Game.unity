@@ -20112,6 +20112,11 @@ PrefabInstance:
       objectReference: {fileID: 495468856}
     - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
         type: 3}
+      propertyPath: ruta.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
+        type: 3}
       propertyPath: ruta.Array.data[0]
       value: 
       objectReference: {fileID: 1466994671}
@@ -20358,6 +20363,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 495468856}
+    - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
+        type: 3}
+      propertyPath: ruta.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
         type: 3}
       propertyPath: ruta.Array.data[0]
