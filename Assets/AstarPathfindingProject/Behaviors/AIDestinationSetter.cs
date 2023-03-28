@@ -21,15 +21,12 @@ namespace Pathfinding
         public Transform target;
         IAstarAI ai;
         public Transform[] ruta;
-        bool llegado1, llegado2;
         private int indiceRuta;
 
         void Start()
         {
             //ai.updateRotation = false;
             //ai.updateUpAxis = false;
-            llegado1 = false;
-            llegado2 = false;
             indiceRuta = 0;
         }
 

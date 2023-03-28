@@ -47,7 +47,7 @@ public class ScoreboardTable : MonoBehaviour
 
         //Locate the list in the RectTransform
         rowTransformList = new List<Transform>();
-        for (int i = 0; i < 3; ++i)
+        for (int i = 0; i < 3; i++)
         {
             CreateRowTransform(rows.RowList[i], content, rowTransformList);
         }

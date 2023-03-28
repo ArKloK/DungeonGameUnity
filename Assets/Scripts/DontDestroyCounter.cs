@@ -33,6 +33,6 @@ public class DontDestroyCounter : MonoBehaviour
     void Update()
     {
         counter += Time.deltaTime;
-        Debug.Log(counter + "\n");
+        //Debug.Log(counter + "\n");
     }
 }
