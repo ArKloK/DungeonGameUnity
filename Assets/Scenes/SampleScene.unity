@@ -13497,6 +13497,11 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5561230128280446379, guid: ad530c52fead5464d9fdc5c40fa6cf76,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad530c52fead5464d9fdc5c40fa6cf76, type: 3}
 --- !u!1001 &4829895057077169075
@@ -13679,6 +13684,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Jugador
+      objectReference: {fileID: 0}
+    - target: {fileID: 9004717635486777354, guid: a6cf37828e832a04f9950d6305e91340,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9004717635486777355, guid: a6cf37828e832a04f9950d6305e91340,
         type: 3}
