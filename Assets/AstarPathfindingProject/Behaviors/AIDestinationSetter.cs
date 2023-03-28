@@ -21,12 +21,12 @@ namespace Pathfinding
         public Transform target;
         IAstarAI ai;
         public Transform[] ruta;
+        bool detectado;
         private int indiceRuta;
 
         void Start()
         {
-            //ai.updateRotation = false;
-            //ai.updateUpAxis = false;
+          
             indiceRuta = 0;
         }
 
@@ -48,9 +48,10 @@ namespace Pathfinding
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
-            if (Math.Abs(ai.position.x - target.position.x) <= 9 && Math.Abs(ai.position.y - target.position.y) <= 1)
+            float distancia = Vector3.Distance(target.position, this.transform.position);
+            if (distancia <= 3)
             {
-                if (target != null && ai != null) ai.destination = target.position;
+                detectado = true;
             }
             else if (this.transform.position.x.ToString("00") == ruta[indiceRuta].position.x.ToString("00") && this.transform.position.y.ToString("00") == ruta[indiceRuta].position.y.ToString("00"))
             {
@@ -64,8 +65,19 @@ namespace Pathfinding
                     indiceRuta = 0;
                     
                 }
+            }
+            MovimientoEnemigo(detectado);
+        }
+
+        void MovimientoEnemigo(bool esDetectado)
+        {
+            if (detectado)
+            {
+                ai.destination = target.position;
+            }
+            else
+            {
                 ai.destination = ruta[indiceRuta].position;
-                
             }
         }
 
