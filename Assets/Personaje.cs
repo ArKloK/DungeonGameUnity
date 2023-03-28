@@ -58,7 +58,7 @@ public class Personaje : MonoBehaviour
         }
     }
 
-    private void CausarHerida()
+    public void CausarHerida()
     {
         if (vida > 0)
         {

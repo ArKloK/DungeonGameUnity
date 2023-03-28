@@ -19026,6 +19026,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jugador
       objectReference: {fileID: 0}
+    - target: {fileID: 9004717635486777354, guid: a6cf37828e832a04f9950d6305e91340,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 9004717635486777355, guid: a6cf37828e832a04f9950d6305e91340,
         type: 3}
       propertyPath: m_RootOrder
@@ -20105,6 +20110,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 27147563283260579, guid: ad530c52fead5464d9fdc5c40fa6cf76,
+        type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
         type: 3}
       propertyPath: target
@@ -20358,6 +20368,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 27147563283260579, guid: ad530c52fead5464d9fdc5c40fa6cf76,
+        type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3463438802597323422, guid: ad530c52fead5464d9fdc5c40fa6cf76,
         type: 3}
       propertyPath: target
