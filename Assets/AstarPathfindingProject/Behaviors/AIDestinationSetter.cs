@@ -21,12 +21,18 @@ namespace Pathfinding
         public Transform target;
         IAstarAI ai;
         public Transform[] ruta;
+        float velocity;
         bool detectado;
         private int indiceRuta;
 
+        private void Awake()
+        {
+            velocity = PlayerPrefs.GetFloat("velocity", 1);
+        }
+
         void Start()
         {
-          
+            
             indiceRuta = 0;
         }
 
@@ -48,6 +54,7 @@ namespace Pathfinding
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
+            this.ai.maxSpeed = velocity;
             float distancia = Vector3.Distance(target.position, this.transform.position);
             if (distancia <= 3)
             {

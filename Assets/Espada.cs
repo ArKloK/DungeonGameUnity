@@ -5,9 +5,13 @@ using UnityEngine;
 public class Espada : MonoBehaviour
 {
     private BoxCollider2D colEspada;
+    private int hitsCounter;
+    private int nHits;
 
     private void Awake()
     {
+        hitsCounter = 0;
+        nHits = PlayerPrefs.GetInt("lifes", 1);
         colEspada = GetComponent<BoxCollider2D>();
     }
 
@@ -15,7 +19,12 @@ public class Espada : MonoBehaviour
     {
         if (collision.CompareTag("Enemigo"))
         {
-            Destroy(collision.gameObject);
+            if (hitsCounter >= nHits)
+            {
+                Destroy(collision.gameObject);
+            }
+            else
+                hitsCounter++;
         }
     }
 }

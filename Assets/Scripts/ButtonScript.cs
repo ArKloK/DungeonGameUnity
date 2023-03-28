@@ -6,9 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-    [SerializeField]
-    private CanvasGroup[] Menus;
-
     public void PlayGame()
     {
         Debug.Log("HOAL");
@@ -21,22 +18,24 @@ public class ButtonScript : MonoBehaviour
         Application.Quit();
     }
 
-    public void OpenSingle(CanvasGroup canvas)
+    public void EasyDifficulty()
     {
-        Debug.Log("ENTRA");
-        foreach (CanvasGroup c in Menus)
-        {
-            Debug.Log("Entra en bucle");
-            CloseSingle(c);
-        }
-        
-        canvas.alpha = canvas.alpha > 0 ? 0 : 1;
-        canvas.blocksRaycasts = canvas.blocksRaycasts == true ? false : true;
+        PlayerPrefs.SetFloat("velocity", 1);
+        PlayerPrefs.SetInt("lifes", 1);
+        PlayerPrefs.Save();
     }
 
-    public void CloseSingle(CanvasGroup canvas)
+    public void MediumDifficulty()
     {
-        canvas.alpha = 0;
-        canvas.blocksRaycasts = false;
+        PlayerPrefs.SetFloat("velocity", 3);
+        PlayerPrefs.SetInt("lifes", 3);
+        PlayerPrefs.Save();
+    }
+
+    public void HardDifficulty()
+    {
+        PlayerPrefs.SetFloat("velocity", 5);
+        PlayerPrefs.SetInt("lifes", 5);
+        PlayerPrefs.Save();
     }
 }
