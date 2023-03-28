@@ -7,7 +7,7 @@ public class Personaje : MonoBehaviour
     [SerializeField] private float velocidad;
     [SerializeField] private BoxCollider2D colEspada;
 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rigibody;
 
     private Animator ani;
 
@@ -21,7 +21,7 @@ public class Personaje : MonoBehaviour
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigibody = GetComponent<Rigidbody2D>();
         ani = GetComponentInChildren<Animator>();
         spritePersonaje = GetComponentInChildren<SpriteRenderer>();
     }
@@ -43,8 +43,8 @@ public class Personaje : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        rigidbody.velocity = new Vector2(horizontal, vertical) * velocidad;
-        ani.SetFloat("Camina", Mathf.Abs(rigidbody.velocity.magnitude));
+        rigibody.velocity = new Vector2(horizontal, vertical) * velocidad;
+        ani.SetFloat("Camina", Mathf.Abs(rigibody.velocity.magnitude));
 
         if(horizontal > 0)
         {
@@ -69,6 +69,17 @@ public class Personaje : MonoBehaviour
             {
                 Debug.Log("Has muerto");
             }
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Enemigo"))
+        {
+            // Aplicar fuerza al enemigo para que retroceda
+            Vector2 pushBack = col.transform.position - this.transform.position;
+            pushBack.Normalize();
+            col.GetComponent<Rigidbody2D>().AddForce(pushBack * 1000, ForceMode2D.Impulse);
         }
     }
 }
