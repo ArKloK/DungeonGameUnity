@@ -24,6 +24,15 @@ namespace Pathfinding
         float velocity;
         bool detectado;
         private int indiceRuta;
+        private SpriteRenderer sprite;
+        private Transform objetivo;
+        private Animator ani;
+
+        private void Awake()
+        {
+            ani = GetComponentInChildren<Animator>();
+            sprite = GetComponentInChildren<SpriteRenderer>();
+        }
 
         private void Awake()
         {
@@ -34,6 +43,7 @@ namespace Pathfinding
         {
             
             indiceRuta = 0;
+            
         }
 
         void OnEnable()
@@ -56,11 +66,8 @@ namespace Pathfinding
         {
             this.ai.maxSpeed = velocity;
             float distancia = Vector3.Distance(target.position, this.transform.position);
-            if (distancia <= 3)
-            {
-                detectado = true;
-            }
-            else if (this.transform.position.x.ToString("00") == ruta[indiceRuta].position.x.ToString("00") && this.transform.position.y.ToString("00") == ruta[indiceRuta].position.y.ToString("00"))
+           
+            if (this.transform.position.x.ToString("00") == ruta[indiceRuta].position.x.ToString("00") && this.transform.position.y.ToString("00") == ruta[indiceRuta].position.y.ToString("00"))
             {
                 if (indiceRuta < ruta.Length - 1)
                 {
@@ -73,7 +80,13 @@ namespace Pathfinding
                     
                 }
             }
+            if (distancia <= 3)
+            {
+                detectado = true;
+            }
+
             MovimientoEnemigo(detectado);
+            rotarEnemigo();
         }
 
         void MovimientoEnemigo(bool esDetectado)
@@ -81,10 +94,33 @@ namespace Pathfinding
             if (detectado)
             {
                 ai.destination = target.position;
+                objetivo = target;
             }
             else
             {
                 ai.destination = ruta[indiceRuta].position;
+                objetivo = ruta[indiceRuta];
+            }
+        }
+
+        void rotarEnemigo()
+        {
+            if(this.transform.position.x > objetivo.position.x)
+            {
+                sprite.flipX = true;
+            }
+            else
+            {
+                sprite.flipX = false;
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                ani.SetTrigger("Ataca");
             }
         }
 

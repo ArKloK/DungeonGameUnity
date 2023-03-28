@@ -9,12 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3688274609471927637}
-  - component: {fileID: 3688274609471927636}
   - component: {fileID: 3463438802597323422}
   - component: {fileID: 1202169496157881081}
   - component: {fileID: 27147563283260579}
   - component: {fileID: 1923608479699684241}
   - component: {fileID: 5061032797846488070}
+  - component: {fileID: 5561230128280446379}
+  - component: {fileID: 1887214142648845502}
   m_Layer: 0
   m_Name: Enemigo
   m_TagString: Enemigo
@@ -38,22 +39,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &3688274609471927636
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3688274609471927638}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.021685839, y: 0.054215014}
-  m_Size: {x: 0.83251905, y: 0.89157}
-  m_Direction: 0
 --- !u!114 &3463438802597323422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,9 +54,6 @@ MonoBehaviour:
   version: 1
   target: {fileID: 0}
   ruta:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &1202169496157881081
 MonoBehaviour:
@@ -116,7 +98,7 @@ MonoBehaviour:
   version: 5
   radius: 0.5
   height: 2
-  canMove: 1
+  canMove: 0
   maxSpeed: 3
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
@@ -181,12 +163,54 @@ Rigidbody2D:
   m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &5561230128280446379
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688274609471927638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0050857067, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3356757, y: 1}
+  m_EdgeRadius: 0
+--- !u!70 &1887214142648845502
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688274609471927638}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &3688274609938608363
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +222,8 @@ GameObject:
   - component: {fileID: 3688274609938608362}
   - component: {fileID: 3688274609938608360}
   - component: {fileID: 3688274609938608361}
+  - component: {fileID: 7549374993098524164}
+  - component: {fileID: 1868815076531895524}
   m_Layer: 0
   m_Name: Animador
   m_TagString: Untagged
@@ -294,3 +320,41 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &7549374993098524164
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688274609938608363}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.96, y: -0.018045604}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.7040535, y: 0.8484179}
+  m_EdgeRadius: 0
+--- !u!114 &1868815076531895524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3688274609938608363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74130ee7079b8cc45b4be186d0c7f7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
