@@ -51,6 +51,11 @@ public class Personaje : MonoBehaviour
         {
             ani.SetTrigger("Ataca");
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            CausarHerida();
+        }
     }
 
     private void FixedUpdate()
