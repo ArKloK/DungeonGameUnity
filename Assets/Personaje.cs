@@ -36,7 +36,7 @@ public class Personaje : MonoBehaviour
             PlayerPrefs.SetInt("vidas", 3);
             PlayerPrefs.Save();
         }
-        
+
         vida = PlayerPrefs.GetInt("vidas");
         Debug.Log("nvidas pp " + vida + " en escena " + SceneManager.GetActiveScene().name);
         vidaUI.CargarCorazones();
@@ -54,7 +54,7 @@ public class Personaje : MonoBehaviour
         {
             rigibody.velocity = Vector2.zero;
             contadorAtaque -= Time.deltaTime;
-            if( contadorAtaque <= 0)
+            if (contadorAtaque <= 0)
             {
                 ani.SetBool("Ataca", false);
                 estaAtacando = false;
@@ -64,7 +64,7 @@ public class Personaje : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             contadorAtaque = tiempoAtaque;
-            ani.SetBool("Ataca",true);
+            ani.SetBool("Ataca", true);
             estaAtacando = true;
         }
 
@@ -82,9 +82,9 @@ public class Personaje : MonoBehaviour
         rigibody.velocity = new Vector2(horizontal, vertical) * velocidad;
         ani.SetFloat("MovX", rigibody.velocity.x);
         ani.SetFloat("MovY", rigibody.velocity.y);
-       
-      
-        if(horizontal == 1 || horizontal == -1 || vertical == 1 || vertical == -1)
+
+
+        if (horizontal == 1 || horizontal == -1 || vertical == 1 || vertical == -1)
         {
             ani.SetFloat("UltMovX", horizontal);
             ani.SetFloat("UltMovY", vertical);
@@ -101,7 +101,7 @@ public class Personaje : MonoBehaviour
             PlayerPrefs.SetInt("vidas", vida);
             PlayerPrefs.Save();
 
-            if(vida == 0)
+            if (vida == 0)
             {
                 Debug.Log("Has muerto");
             }
@@ -119,11 +119,16 @@ public class Personaje : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Corazon"))
+        int nvidas = PlayerPrefs.GetInt("vidas");
+        if (nvidas < 3)
         {
-            Debug.Log("AÑADIENDO VIDA");
-            Destroy(collision.gameObject);
-            AñadirVida();
+            if (collision.CompareTag("Corazon"))
+            {
+                Debug.Log("AÑADIENDO VIDA");
+                Destroy(collision.gameObject);
+                AñadirVida();
+            }
         }
+
     }
 }
