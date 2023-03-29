@@ -34,7 +34,7 @@ public class LoadScene : MonoBehaviour {
     {
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
-                SceneManager.LoadScene("Game");
+                SceneManager.LoadScene("GameScene2");
             }
             else if (SceneManager.GetActiveScene().buildIndex == 2)
             {

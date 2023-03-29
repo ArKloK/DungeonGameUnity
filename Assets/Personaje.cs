@@ -28,7 +28,7 @@ public class Personaje : MonoBehaviour
         ani = GetComponentInChildren<Animator>();
         spritePersonaje = GetComponentInChildren<SpriteRenderer>();
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SampleScene"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("GameScene1"))
         {
             Debug.Log("RESETEANDO VIDAS");
             PlayerPrefs.SetInt("vidas", 3);

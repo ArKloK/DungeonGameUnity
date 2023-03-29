@@ -48,7 +48,7 @@ public class SettingsMenuGame : MonoBehaviour
 
     public void ChangeSliderVolume()
     {
-        Debug.Log("CAMBIANDO VOLUMEN");
+        //Debug.Log("CAMBIANDO VOLUMEN");
         sliderValueVolume = sliderVolume.value;
         PlayerPrefs.SetFloat("audioVolume", sliderValueVolume);
         AudioListener.volume = sliderVolume.value;
@@ -57,7 +57,7 @@ public class SettingsMenuGame : MonoBehaviour
 
     public void ChangeSliderBrightness()
     {
-        Debug.Log("CAMBIANDO BRILLO");
+        //Debug.Log("CAMBIANDO BRILLO");
         sliderValueBrightness = sliderBrightness.value;
         PlayerPrefs.SetFloat("brightness", sliderValueBrightness);
         brightnessPanel.color = new Color(brightnessPanel.color.r, brightnessPanel.color.g, brightnessPanel.color.b, sliderBrightness.value);

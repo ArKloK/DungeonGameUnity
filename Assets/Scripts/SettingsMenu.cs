@@ -53,7 +53,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void ChangeSliderVolume()
     {
-        Debug.Log("CAMBIANDO VOLUMEN");
+        //Debug.Log("CAMBIANDO VOLUMEN");
         sliderValueVolume = sliderVolume.value;
         PlayerPrefs.SetFloat("audioVolume", sliderValueVolume);
         PlayerPrefs.Save();
