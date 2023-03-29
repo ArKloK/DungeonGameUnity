@@ -23,6 +23,8 @@ public class DontDestroyCounter : MonoBehaviour
     void Start()
     {
         counter = 0;
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
     }
 
     public static float GetCounter()

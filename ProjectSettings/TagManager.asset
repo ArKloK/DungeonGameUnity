@@ -8,6 +8,11 @@ TagManager:
   - Options
   - Brillo
   - GameOver
+  - Row
+  - Muro
+  - Chest
+  - Corazon
+  - Espada
   layers:
   - Default
   - TransparentFX

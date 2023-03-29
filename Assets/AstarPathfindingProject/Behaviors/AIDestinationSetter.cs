@@ -60,6 +60,7 @@ namespace Pathfinding
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
+           
             this.ai.maxSpeed = velocity;
             float distancia = Vector3.Distance(target.position, this.transform.position);
            
@@ -82,7 +83,7 @@ namespace Pathfinding
             }
 
             MovimientoEnemigo(detectado);
-            rotarEnemigo();
+            //rotarEnemigo();
         }
 
         void MovimientoEnemigo(bool esDetectado)
@@ -97,28 +98,18 @@ namespace Pathfinding
                 ai.destination = ruta[indiceRuta].position;
                 objetivo = ruta[indiceRuta];
             }
+            ani.SetFloat("MovX", (objetivo.position.x - this.transform.position.x));
+            ani.SetFloat("MovY", (objetivo.position.y - this.transform.position.y));
         }
 
-        void rotarEnemigo()
-        {
-            if(this.transform.position.x > objetivo.position.x)
-            {
-                //sprite.flipX = true;
-                transform.localScale = new Vector2(-1,1);
-            }
-            else
-            {
-                //sprite.flipX = false;
-                transform.localScale = new Vector2(1, 1);
-            }
-        }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+       private void OnTriggerEnter2D(Collider2D collision)
         {
             
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.tag == "Espada")
             {
-                ani.SetTrigger("Ataca");
+                Vector2 diferencia = this.transform.position - collision.transform.position;
+                this.transform.position = new Vector2(transform.position.x + diferencia.x, transform.position.y + diferencia.y);
             }
         }
 

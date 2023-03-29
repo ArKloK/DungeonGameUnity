@@ -7,7 +7,6 @@ using UnityEngine.Video;
 public class Personaje : MonoBehaviour
 {
     [SerializeField] private float velocidad;
-    [SerializeField] private BoxCollider2D colEspada;
 
     private Rigidbody2D rigibody;
 
@@ -21,6 +20,9 @@ public class Personaje : MonoBehaviour
     private int vida;
     [SerializeField] private Textos vidaUI;
 
+    private float tiempoAtaque = .25f;
+    private float contadorAtaque = .25f;
+    private bool estaAtacando;
 
     private void Awake()
     {
@@ -47,9 +49,23 @@ public class Personaje : MonoBehaviour
 
     private void Update()
     {
+
+        if (estaAtacando)
+        {
+            rigibody.velocity = Vector2.zero;
+            contadorAtaque -= Time.deltaTime;
+            if( contadorAtaque <= 0)
+            {
+                ani.SetBool("Ataca", false);
+                estaAtacando = false;
+            }
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
-            ani.SetTrigger("Ataca");
+            contadorAtaque = tiempoAtaque;
+            ani.SetBool("Ataca",true);
+            estaAtacando = true;
         }
 
         if (Input.GetKeyDown(KeyCode.K))
@@ -66,18 +82,13 @@ public class Personaje : MonoBehaviour
         rigibody.velocity = new Vector2(horizontal, vertical) * velocidad;
         ani.SetFloat("MovX", rigibody.velocity.x);
         ani.SetFloat("MovY", rigibody.velocity.y);
-        /*ani.SetFloat("Camina", Mathf.Abs(rigibody.velocity.magnitude));
+       
       
-        if(horizontal > 0)
+        if(horizontal == 1 || horizontal == -1 || vertical == 1 || vertical == -1)
         {
-            colEspada.offset = new Vector2(posColX, posColY);
-            spritePersonaje.flipX = false;
+            ani.SetFloat("UltMovX", horizontal);
+            ani.SetFloat("UltMovY", vertical);
         }
-        else if(horizontal < 0)
-        {
-            colEspada.offset = new Vector2(-posColX, posColY);
-            spritePersonaje.flipX = true;
-        } */
     }
 
     public void CausarHerida()
@@ -94,6 +105,25 @@ public class Personaje : MonoBehaviour
             {
                 Debug.Log("Has muerto");
             }
+        }
+    }
+
+    public void AñadirVida()
+    {
+        vida = PlayerPrefs.GetInt("vidas");
+        vida++;
+        PlayerPrefs.SetInt("vidas", vida);
+        PlayerPrefs.Save();
+        vidaUI.CargarCorazones();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Corazon"))
+        {
+            Debug.Log("AÑADIENDO VIDA");
+            Destroy(collision.gameObject);
+            AñadirVida();
         }
     }
 }
