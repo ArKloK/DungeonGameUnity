@@ -20,7 +20,6 @@ public class LoadScene : MonoBehaviour {
     private void Update()
     {
         enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-        Debug.Log("NUMERO ENEMIGOS "+ enemigos.Length);
         if (enemigos.Length==0)
         {
             colider.enabled = true;

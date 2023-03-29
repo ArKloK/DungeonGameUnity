@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontDestroyCounter : MonoBehaviour
 {
@@ -32,6 +33,11 @@ public class DontDestroyCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("MenuPrincipal"))
+        {
+            Debug.Log("ESCENA MENU PRINCIPAL");
+            Destroy(gameObject);
+        }
         counter += Time.deltaTime;
         //Debug.Log(counter + "\n");
     }

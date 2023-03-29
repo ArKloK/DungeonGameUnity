@@ -40,7 +40,7 @@ public class ScoreboardTable : MonoBehaviour
             {
                 for (int j = i + 1; j < rows.RowList.Count; j++)
                 {
-                    if (rows.RowList[j].score > rows.RowList[i].score)
+                    if (rows.RowList[j].score < rows.RowList[i].score)
                     {
                         Row tmp = rows.RowList[i];
                         rows.RowList[i] = rows.RowList[j];

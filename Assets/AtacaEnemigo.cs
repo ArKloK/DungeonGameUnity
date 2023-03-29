@@ -11,7 +11,6 @@ public class AtacaEnemigo : MonoBehaviour
         {
             Personaje personaje = collision.gameObject.GetComponent<Personaje>();
             personaje.CausarHerida();
-
         }
     }
 }

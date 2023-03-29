@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Personaje : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class Personaje : MonoBehaviour
     private float posColX = 1;
     private float posColY = 0;
 
-    private int vida = 3;
+    private int vida;
     [SerializeField] private Textos vidaUI;
 
     private void Awake()
@@ -24,6 +26,22 @@ public class Personaje : MonoBehaviour
         rigibody = GetComponent<Rigidbody2D>();
         ani = GetComponentInChildren<Animator>();
         spritePersonaje = GetComponentInChildren<SpriteRenderer>();
+
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SampleScene"))
+        {
+            Debug.Log("RESETEANDO VIDAS");
+            PlayerPrefs.SetInt("vidas", 3);
+            PlayerPrefs.Save();
+        }
+        
+        vida = PlayerPrefs.GetInt("vidas");
+        Debug.Log("nvidas pp " + vida + " en escena " + SceneManager.GetActiveScene().name);
+        vidaUI.CargarCorazones();
+    }
+
+    public int getVida()
+    {
+        return vida;
     }
 
     private void Update()
@@ -60,26 +78,18 @@ public class Personaje : MonoBehaviour
 
     public void CausarHerida()
     {
+        vida = PlayerPrefs.GetInt("vidas");
         if (vida > 0)
         {
             vida--;
             vidaUI.QuitarCorazones(vida);
+            PlayerPrefs.SetInt("vidas", vida);
+            PlayerPrefs.Save();
 
             if(vida == 0)
             {
                 Debug.Log("Has muerto");
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Enemigo"))
-        {
-            // Aplicar fuerza al enemigo para que retroceda
-            Vector2 pushBack = col.transform.position - this.transform.position;
-            pushBack.Normalize();
-            col.GetComponent<Rigidbody2D>().AddForce(pushBack * 1000, ForceMode2D.Impulse);
         }
     }
 }

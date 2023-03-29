@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 9004717635486777364}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocidad: 3
   colEspada: {fileID: 9004717634168418039}
-  vidaUI: {fileID: 0}
+  vidaUI: {fileID: 4829895055732816866, guid: 0b7e241a27d03874998a45980e1dd3e6, type: 3}
 --- !u!70 &9004717635486777365
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

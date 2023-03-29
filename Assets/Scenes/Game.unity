@@ -19576,6 +19576,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4829895055284213857, guid: 0b7e241a27d03874998a45980e1dd3e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53,
+        type: 3}
     - target: {fileID: 4829895055732816867, guid: 0b7e241a27d03874998a45980e1dd3e6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -19686,6 +19692,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI
       objectReference: {fileID: 0}
+    - target: {fileID: 4829895055932641424, guid: 0b7e241a27d03874998a45980e1dd3e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53,
+        type: 3}
     - target: {fileID: 4829895056193268429, guid: 0b7e241a27d03874998a45980e1dd3e6,
         type: 3}
       propertyPath: m_Maskable
@@ -19736,6 +19748,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4829895056885406069, guid: 0b7e241a27d03874998a45980e1dd3e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53,
+        type: 3}
     - target: {fileID: 4829895057327435400, guid: 0b7e241a27d03874998a45980e1dd3e6,
         type: 3}
       propertyPath: m_AnchoredPosition.x

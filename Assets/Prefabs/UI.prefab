@@ -315,6 +315,7 @@ MonoBehaviour:
   - {fileID: 4829895055932641426}
   - {fileID: 4829895056885406071}
   corazonDesactivado: {fileID: 21300002, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
+  corazonActivado: {fileID: 21300000, guid: fed24bd82cefc0c4a8ef64dab6231b53, type: 3}
 --- !u!1 &4829895055876522692
 GameObject:
   m_ObjectHideFlags: 0

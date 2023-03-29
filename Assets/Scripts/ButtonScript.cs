@@ -38,4 +38,9 @@ public class ButtonScript : MonoBehaviour
         PlayerPrefs.SetInt("lifes", 5);
         PlayerPrefs.Save();
     }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
 }
