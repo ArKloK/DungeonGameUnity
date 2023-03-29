@@ -103,11 +103,13 @@ namespace Pathfinding
         {
             if(this.transform.position.x > objetivo.position.x)
             {
-                sprite.flipX = true;
+                //sprite.flipX = true;
+                transform.localScale = new Vector2(-1,1);
             }
             else
             {
-                sprite.flipX = false;
+                //sprite.flipX = false;
+                transform.localScale = new Vector2(1, 1);
             }
         }
 

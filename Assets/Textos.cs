@@ -10,6 +10,7 @@ public class Textos : MonoBehaviour
     [SerializeField] private TMP_Text texto;
     [SerializeField] private List<GameObject> listCorazones;
     [SerializeField] private Sprite corazonDesactivado;
+    [SerializeField] private Sprite corazonActivado;
 
     public void ActivarDesactivarCajaTextos(bool activar)
     {
@@ -27,4 +28,11 @@ public class Textos : MonoBehaviour
         corazon.sprite = corazonDesactivado;
     }
 
+    public void DarCorazones(int indice)
+    {
+        Image cora = listCorazones[indice].GetComponent<Image>();
+        cora.sprite = corazonActivado;
+    }
+    
 }
+

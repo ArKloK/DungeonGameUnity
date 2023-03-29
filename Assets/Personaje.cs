@@ -19,6 +19,7 @@ public class Personaje : MonoBehaviour
     private int vida = 3;
     [SerializeField] private Textos vidaUI;
 
+
     private void Awake()
     {
         rigibody = GetComponent<Rigidbody2D>();
@@ -32,10 +33,6 @@ public class Personaje : MonoBehaviour
         {
             ani.SetTrigger("Ataca");
         }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            CausarHerida();
-        }
     }
 
     private void FixedUpdate()
@@ -44,8 +41,10 @@ public class Personaje : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         rigibody.velocity = new Vector2(horizontal, vertical) * velocidad;
-        ani.SetFloat("Camina", Mathf.Abs(rigibody.velocity.magnitude));
-
+        ani.SetFloat("MovX", rigibody.velocity.x);
+        ani.SetFloat("MovY", rigibody.velocity.y);
+        /*ani.SetFloat("Camina", Mathf.Abs(rigibody.velocity.magnitude));
+      
         if(horizontal > 0)
         {
             colEspada.offset = new Vector2(posColX, posColY);
@@ -55,7 +54,7 @@ public class Personaje : MonoBehaviour
         {
             colEspada.offset = new Vector2(-posColX, posColY);
             spritePersonaje.flipX = true;
-        }
+        } */
     }
 
     public void CausarHerida()
@@ -69,17 +68,6 @@ public class Personaje : MonoBehaviour
             {
                 Debug.Log("Has muerto");
             }
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Enemigo"))
-        {
-            // Aplicar fuerza al enemigo para que retroceda
-            Vector2 pushBack = col.transform.position - this.transform.position;
-            pushBack.Normalize();
-            col.GetComponent<Rigidbody2D>().AddForce(pushBack * 1000, ForceMode2D.Impulse);
         }
     }
 }
