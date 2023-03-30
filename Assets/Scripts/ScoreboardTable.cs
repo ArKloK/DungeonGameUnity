@@ -67,7 +67,7 @@ public class ScoreboardTable : MonoBehaviour
 
         Transform entryTransform = Instantiate(row, content);
         RectTransform rectTransform = entryTransform.GetComponent<RectTransform>();
-        rectTransform.anchoredPosition = new Vector2(headerRectTransform.position.x, -rowHeight * transformList.Count);
+        rectTransform.anchoredPosition = new Vector2(headerRectTransform.position.x-500, -rowHeight * transformList.Count);
         entryTransform.gameObject.SetActive(true);
 
         int rank = transformList.Count + 1;
