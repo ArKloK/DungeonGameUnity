@@ -27,15 +27,15 @@ public class ButtonScript : MonoBehaviour
 
     public void MediumDifficulty()
     {
-        PlayerPrefs.SetFloat("velocity", 3);
-        PlayerPrefs.SetInt("lifes", 3);
+        PlayerPrefs.SetFloat("velocity", 2);
+        PlayerPrefs.SetInt("lifes", 2);
         PlayerPrefs.Save();
     }
 
     public void HardDifficulty()
     {
-        PlayerPrefs.SetFloat("velocity", 4);
-        PlayerPrefs.SetInt("lifes", 4);
+        PlayerPrefs.SetFloat("velocity", 2.5f);
+        PlayerPrefs.SetInt("lifes", 3);
         PlayerPrefs.Save();
     }
 

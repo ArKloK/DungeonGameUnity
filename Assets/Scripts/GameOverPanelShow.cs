@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameOverPanelShow : MonoBehaviour
 {
     public GameObject gameover;
+    [SerializeField] private AudioClip audioClip;
 
     private void Start()
     {
@@ -24,6 +25,7 @@ public class GameOverPanelShow : MonoBehaviour
             {
                 gameover.SetActive(true);
                 Time.timeScale = 0f;
+                Sounds.instance.EjecutarSonido(audioClip);
             }
         }
     }

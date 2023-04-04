@@ -27,6 +27,7 @@ namespace Pathfinding
         private SpriteRenderer sprite;
         private Transform objetivo;
         private Animator ani;
+        private Rigidbody2D rigidbody2;
 
         private void Awake()
         {
@@ -37,9 +38,8 @@ namespace Pathfinding
 
         void Start()
         {
-            
+            rigidbody2 = GetComponent<Rigidbody2D>();
             indiceRuta = 0;
-            
         }
 
         void OnEnable()
@@ -60,21 +60,21 @@ namespace Pathfinding
         /// <summary>Updates the AI's destination every frame</summary>
         void Update()
         {
-           
+
             this.ai.maxSpeed = velocity;
             float distancia = Vector3.Distance(target.position, this.transform.position);
-           
+
             if (this.transform.position.x.ToString("00") == ruta[indiceRuta].position.x.ToString("00") && this.transform.position.y.ToString("00") == ruta[indiceRuta].position.y.ToString("00"))
             {
                 if (indiceRuta < ruta.Length - 1)
                 {
                     indiceRuta++;
-                    
+
                 }
                 else if (indiceRuta == ruta.Length - 1)
                 {
                     indiceRuta = 0;
-                    
+
                 }
             }
             if (distancia <= 3)
@@ -103,13 +103,21 @@ namespace Pathfinding
         }
 
 
-       private void OnTriggerEnter2D(Collider2D collision)
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            
             if (collision.tag == "Espada")
             {
                 Vector2 diferencia = this.transform.position - collision.transform.position;
-                this.transform.position = new Vector2(transform.position.x + diferencia.x, transform.position.y + diferencia.y);
+                rigidbody2.AddForce(new Vector2(transform.position.x + diferencia.x * 3000, transform.position.y + diferencia.y * 3000));
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.collider.CompareTag("Player"))
+            {
+                Vector2 diferencia = this.transform.position - collision.transform.position;
+                rigidbody2.AddForce(new Vector2(transform.position.x + diferencia.x * 3000, transform.position.y + diferencia.y * 3000));
             }
         }
 

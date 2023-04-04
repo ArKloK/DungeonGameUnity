@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class DontDestroyCounter : MonoBehaviour
 {
     private static float counter;
+    [SerializeField] private AudioClip audioClip;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class DontDestroyCounter : MonoBehaviour
         counter = 0;
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
+        Sounds.instance.EjecutarSonido(audioClip);
     }
 
     public static float GetCounter()

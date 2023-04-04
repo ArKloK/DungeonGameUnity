@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 
 public class LoadScene : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip audioClip;
     public GameObject scoretable;
     private GameObject[] enemigos;
     private CircleCollider2D colider;
@@ -40,7 +40,7 @@ public class LoadScene : MonoBehaviour
         {
             Debug.Log("No puedes pasar");
         }
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+        if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             SceneManager.LoadScene("GameScene2");
         }
@@ -48,6 +48,7 @@ public class LoadScene : MonoBehaviour
         {
             Time.timeScale = 0f;
             scoretable.SetActive(true);
+            Sounds.instance.EjecutarSonido(audioClip);
         }
     }
 }

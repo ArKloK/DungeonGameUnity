@@ -72,6 +72,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropeableObject: {fileID: 0}
+  audioclips:
+  - {fileID: 8300000, guid: 544ea8ec631d7fc419596d786fa15889, type: 3}
+  - {fileID: 8300000, guid: ca3699ae43ef698468b20b81df483bf6, type: 3}
+  - {fileID: 8300000, guid: 72bf1dd7798fc964387f664ebc9dc9cd, type: 3}
+  - {fileID: 8300000, guid: ed43f576d04aa2146891694cfa8ada6b, type: 3}
+  - {fileID: 8300000, guid: 74961934b02e4e34f9cb9b200af174a0, type: 3}
 --- !u!1 &39478284664989861
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,8 +401,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 136a24d88432bdd4d8143015344f572c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: aa69678089a3bdb4cb841d9463227986, type: 3}
   velocidad: 3
-  colEspada: {fileID: 0}
   vidaUI: {fileID: 0}
 --- !u!70 &1084603415348641145
 CapsuleCollider2D:
@@ -507,6 +513,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropeableObject: {fileID: 0}
+  audioclips:
+  - {fileID: 8300000, guid: 544ea8ec631d7fc419596d786fa15889, type: 3}
+  - {fileID: 8300000, guid: ca3699ae43ef698468b20b81df483bf6, type: 3}
+  - {fileID: 8300000, guid: 72bf1dd7798fc964387f664ebc9dc9cd, type: 3}
+  - {fileID: 8300000, guid: ed43f576d04aa2146891694cfa8ada6b, type: 3}
+  - {fileID: 8300000, guid: 74961934b02e4e34f9cb9b200af174a0, type: 3}
 --- !u!1 &4417343971691892027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1661,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropeableObject: {fileID: 0}
+  audioclips:
+  - {fileID: 8300000, guid: 544ea8ec631d7fc419596d786fa15889, type: 3}
+  - {fileID: 8300000, guid: ca3699ae43ef698468b20b81df483bf6, type: 3}
+  - {fileID: 8300000, guid: 72bf1dd7798fc964387f664ebc9dc9cd, type: 3}
+  - {fileID: 8300000, guid: ed43f576d04aa2146891694cfa8ada6b, type: 3}
+  - {fileID: 8300000, guid: 74961934b02e4e34f9cb9b200af174a0, type: 3}
 --- !u!1 &7832512468021531664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1721,6 +1739,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropeableObject: {fileID: 0}
+  audioclips:
+  - {fileID: 8300000, guid: 544ea8ec631d7fc419596d786fa15889, type: 3}
+  - {fileID: 8300000, guid: ca3699ae43ef698468b20b81df483bf6, type: 3}
+  - {fileID: 8300000, guid: 72bf1dd7798fc964387f664ebc9dc9cd, type: 3}
+  - {fileID: 8300000, guid: ed43f576d04aa2146891694cfa8ada6b, type: 3}
+  - {fileID: 8300000, guid: 74961934b02e4e34f9cb9b200af174a0, type: 3}
 --- !u!1 &7923134229405459649
 GameObject:
   m_ObjectHideFlags: 0

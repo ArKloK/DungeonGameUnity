@@ -13,6 +13,7 @@ TagManager:
   - Chest
   - Corazon
   - Espada
+  - AnimadorEnemigo
   layers:
   - Default
   - TransparentFX
